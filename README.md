@@ -28,16 +28,17 @@ pip install -e .
 ### Python
 
 ```python
-from prompt_templates import PromptTemplates
+from prompt_templates import format_prompt, list_templates
 
-result = PromptTemplates.process("data")
-print(result)
+print(list(list_templates()))
+print(format_prompt("summarize", text="Some long text", length=10))
 ```
 
 ### CLI
 
 ```bash
-python -m prompt_templates "your input here"
+python -m prompt_templates --list
+python -m prompt_templates --get summarize
 ```
 
 ## Documentation
